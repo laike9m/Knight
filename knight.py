@@ -94,7 +94,7 @@ class ChessBoard():
 
 if __name__ == '__main__':
     if check_args(sys.argv[1:]):
-        k = tuple(int(a) for a in sys.argv[1:])
+        k = (int(a) for a in sys.argv[1:])
         cb = ChessBoard(*k)
         cb.main()
 
