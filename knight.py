@@ -10,7 +10,7 @@ Coord = namedtuple('Coord', ['x', 'y'])
 
 def check_args(argv):
     if len(argv) != 3:
-        print('usage: knight.py chessboardsize x y\ne.g. knight.py 3 1 2')
+        print('Usage: knight.py chessboardsize x y\ne.g. knight.py 3 1 2')
         return False
     elif all(map(lambda x: x.isdigit(), argv)):
         if argv[0] > max(argv[1], argv[2]):
@@ -94,8 +94,9 @@ class ChessBoard():
 
 if __name__ == '__main__':
     if check_args(sys.argv[1:]):
-        cb = ChessBoard(sys.argv[1:])
-        cb.find_path(cb.coord.x, cb.coord.y)
+        k = tuple(int(a) for a in sys.argv[1:])
+        cb = ChessBoard(*k)
+        cb.main()
 
 
 
