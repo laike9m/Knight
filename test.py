@@ -40,6 +40,24 @@ class TestFindPath(unittest.TestCase):
                 return False
         return True
 
+    def test_unreachable1(self):
+        n, x, y = 2, 1, 2
+        cb = knight.ChessBoard(n, x, y)
+        cb.main()
+        self.assertEqual(cb.path, None, '212 should be unreachable, path %s' % str(cb.path))
+
+    def test_unreachable2(self):
+        n, x, y = 2, 1, 1
+        cb = knight.ChessBoard(n, x, y)
+        cb.main()
+        self.assertEqual(cb.path, None, '212 should be unreachable, path %s' % str(cb.path))
+
+    def test_unreachable3(self):
+        n, x, y = 3, 2, 2
+        cb = knight.ChessBoard(n, x, y)
+        cb.main()
+        self.assertEqual(cb.path, None, '322 should be unreachable, path %s' % str(cb.path))
+
     def test_random(self):
         import random
         for i in range(10):

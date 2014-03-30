@@ -58,7 +58,7 @@ class ChessBoard():
             if self.path_found:
                 break
             if next_x == next_y == self.size:
-                self.path_found = 1  # found the path
+                self.path_found = True  # found a path
                 self.min_steps[x][y] = 1
                 self.next_steps[x][y] = self.destination
                 return
