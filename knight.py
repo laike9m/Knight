@@ -7,9 +7,6 @@ from collections import namedtuple
 
 Coord = namedtuple('Coord', ['x', 'y'])
 
-with open('output.txt', 'wt'):
-    pass
-
 
 def check_args(argv):
     if len(argv) != 3:
